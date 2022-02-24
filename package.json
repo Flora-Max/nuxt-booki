@@ -1,0 +1,12 @@
+{
+  "name": "@gtnsimon/nuxt-booki",
+  "version": "1.0.0",
+  "description": "Nuxt.js Booki",
+  "repository": "git@github.com:gtnsimon/nuxt-booki.git",
+  "author": "Gaëtan Simon <hello@gtnsimon.dev>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/**"
+  ]
+}
