@@ -1,0 +1,22 @@
+{
+  "name": "@gtnsimon/nuxt-booki-backend",
+  "version": "1.0.0",
+  "description": "Nuxt.js Booki - Backend",
+  "repository": "git@github.com:gtnsimon/nuxt-booki.git",
+  "author": "Gaëtan Simon <hello@gtnsimon.dev>",
+  "license": "MIT",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon -r dotenv/config .",
+    "start": "node .",
+    "start:local": "node -r dotenv/config ."
+  },
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}

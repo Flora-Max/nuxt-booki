@@ -1,0 +1,243 @@
+{
+  "accommodations": [
+    {
+      "id": 1,
+      "name": "Auberge La Cannebière",
+      "trending": false,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg",
+        "large": "images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg"
+      },
+      "tags": [ "economic" ],
+      "price": 2500,
+      "note": 4
+    },
+    {
+      "id": 2,
+      "name": "Hôtel du port",
+      "trending": false,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/fred-kleber-gTbaxaVLvsg-unsplash.jpg",
+        "large": "images/hebergements/2_large/fred-kleber-gTbaxaVLvsg-unsplash.jpg"
+      },
+      "tags": [ "economic", "romantic" ],
+      "price": 5200,
+      "note": 5
+    },
+    {
+      "id": 3,
+      "name": "Hôtel Les mouettes",
+      "trending": false,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/reisetopia-B8WIgxA_PFU-unsplash.jpg",
+        "large": "images/hebergements/2_large/reisetopia-B8WIgxA_PFU-unsplash.jpg"
+      },
+      "tags": [ "romantic" ],
+      "price": 7600,
+      "note": 4
+    },
+    {
+      "id": 4,
+      "name": "Hôtel de la mer",
+      "trending": false,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/annie-spratt-Eg1qcIitAuA-unsplash.jpg",
+        "large": "images/hebergements/2_large/annie-spratt-Eg1qcIitAuA-unsplash.jpg"
+      },
+      "tags": [ "economic", "pets" ],
+      "price": 4600,
+      "note": 3
+    },
+    {
+      "id": 5,
+      "name": "Auberge Le Panier",
+      "trending": false,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/nicate-lee-kT-ZyaiwBe0-unsplash.jpg",
+        "large": "images/hebergements/2_large/nicate-lee-kT-ZyaiwBe0-unsplash.jpg"
+      },
+      "tags": [ "economic", "family" ],
+      "price": 2300,
+      "note": 4
+    },
+    {
+      "id": 6,
+      "name": "Hôtel chez Amina",
+      "trending": false,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/febrian-zakaria-M6S1WvfW68A-unsplash.jpg",
+        "large": "images/hebergements/2_large/febrian-zakaria-M6S1WvfW68A-unsplash.jpg"
+      },
+      "tags": [ "family", "pets" ],
+      "price": 9600,
+      "note": 5
+    },
+    {
+      "id": 7,
+      "name": "Hôtel Le soleil du matin",
+      "trending": true,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg",
+        "large": "images/hebergements/2_large/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg"
+      },
+      "tags": [ "romantic", "family" ],
+      "price": 12800,
+      "note": 5
+    },
+    {
+      "id": 8,
+      "name": "Au cœur de l'eau Chambres d'hôtes",
+      "trending": true,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/aw-creative-VGs8z60yT2c-unsplash.jpg",
+        "large": "images/hebergements/2_large/aw-creative-VGs8z60yT2c-unsplash.jpg"
+      },
+      "tags": [ "romantic" ],
+      "price": 7100,
+      "note": 4
+    },
+    {
+      "id": 9,
+      "name": "Hôtel Tout bleu et Blanc",
+      "trending": true,
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      },
+      "images": {
+        "small": "images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg",
+        "large": "images/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg"
+      },
+      "tags": [ "economic", "family", "pets" ],
+      "price": 2500,
+      "note": 4
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "order": 1,
+      "name": "Vieux Port",
+      "images": {
+        "small": "images/hebergements/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg",
+        "large": "images/hebergements/2_large/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg"
+      },
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      }
+    },
+    {
+      "id": 2,
+      "order": 2,
+      "name": "Fort de Pomègues",
+      "images": {
+        "small": "images/hebergements/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg",
+        "large": "images/hebergements/2_large/paul-hermann-QFTrLdQIRhI-unsplash.jpg"
+      },
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      }
+    },
+    {
+      "id": 3,
+      "order": 3,
+      "name": "Îles du Frioul",
+      "images": {
+        "small": "images/hebergements/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg",
+        "large": "images/hebergements/2_large/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg"
+      },
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      }
+    },
+    {
+      "id": 4,
+      "order": 4,
+      "name": "Parc National des Calanques",
+      "images": {
+        "small": "images/hebergements/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg",
+        "large": "images/hebergements/2_large/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg"
+      },
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      }
+    },
+    {
+      "id": 5,
+      "order": 5,
+      "name": "Notre-Dame-de-la-Garde",
+      "images": {
+        "small": "images/hebergements/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg",
+        "large": "images/hebergements/2_large/florian-wehde-xW9e8gdotxI-unsplash.jpg"
+      },
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      }
+    },
+    {
+      "id": 6,
+      "order": 6,
+      "name": "Parc Longchamp",
+      "images": {
+        "small": "images/hebergements/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg",
+        "medium": "images/hebergements/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg",
+        "large": "images/hebergements/2_large/lena-paulin-wH2-EJoDcV0-unsplash.jpg"
+      },
+      "location": {
+        "city": "Marseille",
+        "country": "France"
+      }
+    }
+  ]
+}
