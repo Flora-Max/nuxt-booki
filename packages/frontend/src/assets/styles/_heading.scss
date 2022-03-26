@@ -1,0 +1,17 @@
+.h1,
+.h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.h2--icon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.h2--icon > span {
+  display: inline-block;
+  flex: 1;
+  padding-right: 12px;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@gtnsimon/nuxt-booki-frontend",
+  "version": "1.0.0",
+  "description": "Nuxt.js Booki - Frontend",
+  "repository": "git@github.com:gtnsimon/nuxt-booki.git",
+  "author": "Gaëtan Simon <hello@gtnsimon.dev>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@gtnsimon/nuxt-booki-backend": "1.0.0",
+    "@nuxtjs/axios": "^5.13.6",
+    "minireset.css": "^0.0.7",
+    "nuxt": "2.15.8",
+    "sass": "^1.49.9",
+    "sass-loader": "10.1.1"
+  },
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --open",
+    "start": "nuxt start --dotenv false",
+    "start:local": "nuxt start"
+  }
+}
