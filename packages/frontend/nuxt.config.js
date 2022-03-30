@@ -56,7 +56,7 @@ export default {
 
   vue: {
     config: {
-      devtools: false,
+      devtools: true,
       productionTip: false,
     },
   },
