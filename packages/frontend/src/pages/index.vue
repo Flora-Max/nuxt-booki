@@ -91,164 +91,7 @@
           </header>
 
           <!-- Résultats -->
-          <ul class="cards-list">
-            <!-- Auberge La Cannebière -->
-            <li class="cards-list__item">
-              <a href="#" title="Consulter l'auberge La Cannebière" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/marcus-loke-WQJvWU_HZFo-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" alt="Aperçu de la chambre" width="250">
-                    </picture>
-                  </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Auberge La Cannebière</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>25€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="4">Note de 4 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-            <!-- Hôtel du port -->
-            <li class="cards-list__item">
-              <a href="#" title="Consulter l'hôtel du port" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/fred-kleber-gTbaxaVLvsg-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg" alt="Aperçu de la chambre" width="250">
-                    </picture>
-                  </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Hôtel du port</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>52€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="5">Note de 5 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-            <!-- Hôtel Les mouettes -->
-            <li class="cards-list__item">
-              <a href="#" title="Consulter l'hôtel Les mouettes" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/reisetopia-B8WIgxA_PFU-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/reisetopia-B8WIgxA_PFU-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg" alt="Aperçu de la chambre" width="250">
-                    </picture>
-                  </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Hôtel Les mouettes</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>76€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="4">Note de 4 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-            <!-- Hôtel de la mer -->
-            <li class="cards-list__item">
-              <a href="#" title="Consulter l'hôtel de la mer" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/annie-spratt-Eg1qcIitAuA-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg" alt="Aperçu de la chambre" width="250">
-                    </picture>
-                    </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Hôtel de la mer</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>46€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="3">Note de 3 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-            <!-- Auberge Le Panier -->
-            <li class="cards-list__item">
-              <a href="#" title="Consulter l'auberge Le Panier" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" alt="Aperçu de la chambre" width="250">
-                    </picture>
-                  </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Auberge Le Panier</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>23€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="4">Note de 4 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-            <!-- Hôtel chez Amina -->
-            <li class="cards-list__item">
-              <a href="#" title="Consulter l'hôtel chez Amina" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" alt="Aperçu de la chambre" width="250">
-                    </picture>
-                  </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Hôtel chez Amina</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>96€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="5">Note de 5 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-          </ul>
+          <CardList :items="hebergements" />
 
           <button role="button" type="button" class="btn-more" title="Afficher plus de résultats">Afficher plus</button>
         </section>
@@ -263,86 +106,7 @@
           </header>
 
           <!-- Résultats -->
-          <ul class="cards-list">
-            <!-- Hôtel Le soleil du matin -->
-            <li class="cards-list__item cards-list__item--paysage">
-              <a href="#" title="Consulter l'hôtel Le soleil du matin" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" alt="Aperçu de la chambre" width="136" height="136">
-                    </picture>
-                  </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Hôtel Le soleil du matin</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>128€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="5">Note de 5 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-            <!-- Au cœur de l'eau Chambres d'hôtes -->
-            <li class="cards-list__item cards-list__item--paysage">
-              <a href="#" title="Consulter au cœur de l'eau Chambres d'hôtes" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/aw-creative-VGs8z60yT2c-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/aw-creative-VGs8z60yT2c-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg" alt="Aperçu de la chambre" width="136" height="136">
-                    </picture>
-                  </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Au cœur de l'eau Chambres d'hôtes</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>71€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="4">Note de 4 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-            <!-- Hôtel Tout bleu et Blanc -->
-            <li class="cards-list__item cards-list__item--paysage">
-              <a href="#" title="Consulter l'hôtel Tout bleu et Blanc" class="cards-list__item__wrapper">
-                <article class="cards-list__item__container">
-                  <div class="cards-list__item__cover-wrapper">
-                    <picture class="cards-list__item__cover">
-                      <source media="(min-width: 992px)" srcset="/images/hebergements/2_large/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
-                      <source media="(min-width: 768px)" srcset="/images/hebergements/3_medium/febrian-zakaria-sjvU0THccQA-unsplash.jpg">
-                      <img src="/images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg" alt="Aperçu de la chambre" width="136" height="136">
-                    </picture>
-                    </div>
-
-                  <div class="cards-list__item__content">
-                    <header class="cards-list__item__header">
-                      <h3 class="cards-list__item__title">Hôtel Tout bleu et Blanc</h3>
-                    </header>
-
-                    <p class="cards-list__item__description">
-                      <strong>Nuit à partir de <span>25€</span></strong>
-                    </p>
-
-                    <aside class="cards-list__item__stars" data-stars="4">Note de 4 sur 5</aside>
-                  </div>
-                </article>
-              </a>
-            </li>
-          </ul>
+          <CardList :items="populaires" variant="paysage" />
         </section>
       </div>
 
@@ -352,207 +116,54 @@
           <h2 class="h2">Activités à Marseille</h2>
         </header>
 
-        <ul id="grid-activities" class="cards-list grid-activities">
-          <!-- Vieux Port -->
-          <li class="cards-list__item cards-list__item--jumbo">
-            <a href="#" title="Visiter le Vieux Port de Marseille" class="cards-list__item__wrapper">
-              <article class="cards-list__item__container">
-                <div class="cards-list__item__cover-wrapper">
-                  <picture class="cards-list__item__cover cards-list__item__cover--vieux-port">
-                    <source media="(min-width: 992px)" srcset="/images/activites/2_large/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg">
-                    <source media="(min-width: 768px)" srcset="/images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg">
-                    <img src="/images/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" alt="Le Vieux Port de Marseille" width="370">
-                  </picture>
-                </div>
-
-                <div class="cards-list__item__content">
-                  <header class="cards-list__item__header">
-                    <h3 class="cards-list__item__title">Vieux Port</h3>
-                  </header>
-                </div>
-              </article>
-            </a>
-          </li>
-          <!-- Fort de Pomègues -->
-          <li class="cards-list__item cards-list__item--jumbo">
-            <a href="#" title="Visiter le Fort de Pomègues" class="cards-list__item__wrapper">
-              <article class="cards-list__item__container">
-                <div class="cards-list__item__cover-wrapper">
-                  <picture class="cards-list__item__cover cards-list__item__cover--fort">
-                    <source media="(min-width: 992px)" srcset="/images/activites/2_large/paul-hermann-QFTrLdQIRhI-unsplash.jpg">
-                    <source media="(min-width: 768px)" srcset="/images/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg">
-                    <img src="/images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg" alt="Le Fort de Pomègues" width="370">
-                  </picture>
-                </div>
-
-                <div class="cards-list__item__content">
-                  <header class="cards-list__item__header">
-                    <h3 class="cards-list__item__title">Fort de Pomègues</h3>
-                  </header>
-                </div>
-              </article>
-            </a>
-          </li>
-          <!-- Îles du Frioul -->
-          <li class="cards-list__item cards-list__item--jumbo">
-            <a href="#" title="Visiter les Îles du Frioul" class="cards-list__item__wrapper">
-              <article class="cards-list__item__container">
-                <div class="cards-list__item__cover-wrapper">
-                  <picture class="cards-list__item__cover cards-list__item__cover--frioul">
-                    <source media="(min-width: 992px)" srcset="/images/activites/2_large/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg">
-                    <source media="(min-width: 768px)" srcset="/images/activites/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg">
-                    <img src="/images/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg" alt="Les Îles du Frioul vues depuis la sortie du Vieux Port de Marseille" width="370">
-                  </picture>
-                </div>
-
-                <div class="cards-list__item__content">
-                  <header class="cards-list__item__header">
-                    <h3 class="cards-list__item__title">Îles du Frioul</h3>
-                  </header>
-                </div>
-              </article>
-            </a>
-          </li>
-          <!-- Parc National des Calanques -->
-          <li class="cards-list__item cards-list__item--jumbo">
-            <a href="#" title="Visiter le Parc National des Calanques" class="cards-list__item__wrapper">
-              <article class="cards-list__item__container">
-                <div class="cards-list__item__cover-wrapper">
-                  <picture class="cards-list__item__cover">
-                    <source media="(min-width: 992px)" srcset="/images/activites/2_large/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg">
-                    <source media="(min-width: 768px)" srcset="/images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg">
-                    <img src="/images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" alt="Prise de vue du Parc National des Calanques" width="370">
-                  </picture>
-                </div>
-
-                <div class="cards-list__item__content">
-                  <header class="cards-list__item__header">
-                    <h3 class="cards-list__item__title">Parc National des Calanques</h3>
-                  </header>
-                </div>
-              </article>
-            </a>
-          </li>
-          <!-- Notre-Dame-de-la-Garde -->
-          <li class="cards-list__item cards-list__item--jumbo">
-            <a href="#" title="Visiter Notre-Dame-de-la-Garde" class="cards-list__item__wrapper">
-              <article class="cards-list__item__container">
-                <div class="cards-list__item__cover-wrapper">
-                  <picture class="cards-list__item__cover cards-list__item__cover--notre-dame">
-                    <source media="(min-width: 992px)" srcset="/images/activites/2_large/florian-wehde-xW9e8gdotxI-unsplash.jpg">
-                    <source media="(min-width: 768px)" srcset="/images/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg">
-                    <img src="/images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg" alt="Vue de Notre-Dame-de-la-Garde depuis le centre ville de Marseille" width="370">
-                  </picture>
-                </div>
-
-                <div class="cards-list__item__content">
-                  <header class="cards-list__item__header">
-                    <h3 class="cards-list__item__title">Notre-Dame-de-la-Garde</h3>
-                  </header>
-                </div>
-              </article>
-            </a>
-          </li>
-          <!-- Parc Longchamp -->
-          <li class="cards-list__item cards-list__item--jumbo">
-            <a href="#" title="Visiter le Parc Longchamp" class="cards-list__item__wrapper">
-              <article class="cards-list__item__container">
-                <div class="cards-list__item__cover-wrapper">
-                  <picture class="cards-list__item__cover">
-                    <source media="(min-width: 992px)" srcset="/images/activites/2_large/lena-paulin-wH2-EJoDcV0-unsplash.jpg">
-                    <source media="(min-width: 768px)" srcset="/images/activites/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg">
-                    <img src="/images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg" alt="Le Parc Longchamp" width="370">
-                  </picture>
-                </div>
-
-                <div class="cards-list__item__content">
-                  <header class="cards-list__item__header">
-                    <h3 class="cards-list__item__title">Parc Longchamp</h3>
-                  </header>
-                </div>
-              </article>
-            </a>
-          </li>
-        </ul>
+        <!-- Résultats -->
+        <CardList
+          :items="activities"
+          id="grid-activities"
+          class="grid-activities"
+          variant="jumbo"
+        />
       </section>
     </main>
-
-    <!-- Pied de page -->
-    <footer class="footer">
-      <nav class="container">
-        <div class="footer__container">
-          <!-- À propos -->
-          <section class="footer__section">
-            <header>
-              <h2 class="footer__section__title h2">À propos</h2>
-            </header>
-
-            <ul class="footer__section__list">
-              <li class="footer__section__list-item">
-                <a href="#">Fonctionnement du site</a>
-              </li>
-              <li class="footer__section__list-item">
-                <a href="#">Conditions générales de vente</a>
-              </li>
-              <li class="footer__section__list-item">
-                <a href="#">Données et confidentialité</a>
-              </li>
-            </ul>
-          </section>
-
-          <!-- Nos hébergements -->
-          <section class="footer__section">
-            <header>
-              <h2 class="footer__section__title h2">Nos hébergements</h2>
-            </header>
-
-            <ul class="footer__section__list">
-              <li class="footer__section__list-item">
-                <a href="#">Charte qualité</a>
-              </li>
-              <li class="footer__section__list-item">
-                <a href="#">Soumettre votre hôtel</a>
-              </li>
-            </ul>
-          </section>
-
-          <!-- Assistance -->
-          <section class="footer__section">
-            <header>
-              <h2 class="footer__section__title h2">Assistance</h2>
-            </header>
-
-            <ul class="footer__section__list">
-              <li class="footer__section__list-item">
-                <a href="#">Centre d'aide</a>
-              </li>
-              <li class="footer__section__list-item">
-                <a href="#">Nous contacter</a>
-              </li>
-            </ul>
-          </section>
-        </div>
-      </nav>
-    </footer>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
-
+import Card from '../components/Card.vue'
+import CardList from '../components/CardList.vue'
 export default {
+  components: { Card, CardList },
   name: 'IndexPage',
-  async mounted () {
-    await this.$nextTick()
-    const accomodations = await this.fetchAccomodations()
-
-    // data from api to render "Hébergements à Marseille" et "Les plus populaires"
-    console.log('accomodations', accomodations)
+  data () {
+    return {
+      accommodations: [],
+      activities: [],
+    }
   },
-  methods: {
-    // action pour récupérer les hébergements et les stocker dans le state de l'application
-    // source: modules/api/store/main.js
-    ...mapActions('api', [ 'fetchAccomodations' ]),
-  }
+  computed: {
+    hebergements () {
+      // je veux garder que les éléments pas en trending
+      // et qui correspondent au filtre sélectionné dans item.tags
+
+      return this.accommodations
+    },
+    populaires () {
+      // je veux garder que les éléments en trending
+      // et qui correspondent au filtre sélectionné dans item.tags
+
+      return this.accommodations
+    },
+  },
+  async mounted () {
+    // on attend que notre page soit prête dans le DOM
+    await this.$nextTick()
+
+    // axios : requête vers les hébergements
+    this.accommodations = await this.$axios.$get('/api/accommodations')
+    this.activities = await this.$axios.$get('/api/activities')
+
+    // je veux stocker le résultat dans mon composant
+    // docu vue.js : component data
+  },
 }
 </script>
