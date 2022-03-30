@@ -1,0 +1,47 @@
+.footer {
+    background-color: #f2f2f2;
+
+    &__container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: row;
+        margin: -8px;
+    }
+
+    &__section {
+        flex: 1;
+        margin: 8px;
+
+        &__list {
+            margin-top: 1em;
+        }
+
+        &__title {
+            font-size: 18px;
+        }
+
+        &__list-item > a {
+            color: #000;
+
+            &:hover {
+                color: #505050;
+            }
+        }
+    }
+}
+
+.footer .container {
+    padding: 45px 20px;
+  }
+
+.footer__section__list-item + .footer__section__list-item {
+    margin-top: 0.8em;
+}
+
+.gtnsimon__by {
+    padding: 0 20px 2em 20px !important;
+    line-height: 1.35;
+    text-align: center;
+  }
+  
