@@ -36,44 +36,16 @@
               <h2 class="filters__title">Filtres</h2>
             </header>
 
-            <ul class="filters__list">
-              <!-- Économique -->
-              <li>
-                <a href="#" class="filters__list__item" title="Économique">
-                  <span class="filters__list__item__icon">
-                    <i class="fas fa-money-bill-wave"></i>
-                  </span>
-                  <span class="filters__list__item__text">Économique</span>
-                </a>
-              </li>
-              <!-- Familial -->
-              <li>
-                <a href="#" class="filters__list__item" title="Familial">
-                  <span class="filters__list__item__icon">
-                    <i class="fas fa-child"></i>
-                  </span>
-                  <span class="filters__list__item__text">Familial</span>
-                </a>
-              </li>
-              <!-- Romantique -->
-              <li>
-                <a href="#" class="filters__list__item" title="Romantique">
-                  <span class="filters__list__item__icon">
-                    <i class="fas fa-heart"></i>
-                  </span>
-                  <span class="filters__list__item__text">Romantique</span>
-                </a>
-              </li>
-              <!-- Animaux autorisés -->
-              <li>
-                <a href="#" class="filters__list__item" title="Animaux autorisés">
-                  <span class="filters__list__item__icon">
-                    <i class="fas fa-dog"></i>
-                  </span>
-                  <span class="filters__list__item__text">Animaux autorisés</span>
-                </a>
-              </li>
-            </ul>
+            <!-- Liste des filtres disponibles -->
+            <filtres-liste
+              v-model="selectedFilter"
+              :filters="[]"
+            />
+            <!-- <filtres-liste
+              @change="selectedFilter = $event"       //idem que le model
+              :filters="[]"
+              :selected="selectedFilter"
+            /> -->
           </div>
 
           <div class="hint">
@@ -91,9 +63,9 @@
           </header>
 
           <!-- Résultats -->
-          <CardList :items="hebergements" />
+          <CardList :items="hebergements"/>
 
-          <button role="button" type="button" class="btn-more" title="Afficher plus de résultats">Afficher plus</button>
+          <button @click="addDisplay" role="button" type="button" class="btn-more" title="Afficher plus de résultats">Afficher plus</button>
         </section>
 
         <!-- Les plus populaires -->
@@ -136,34 +108,56 @@ export default {
   name: 'IndexPage',
   data () {
     return {
-      accommodations: [],
-      activities: [],
+      accommodations: [], // résultats de l'API pour les hébergements
+      activities: [], // résultats de l'API pour les activités
+      selectedFilter: null, // filtre sélectionné
+      filters: ['economic', 'family', 'pets', 'romantic'],
     }
   },
+
+// pas de this en () =>
+// méthode [...///] peut remplacer push
+  methods: {
+    //méthode appelé au click sur le bouton, retourne un complément d'affichage
+    addDisplay() {
+      return this.accommodations.push(this.accommodations['1'], this.accommodations['2'])
+    }
+  },
+
   computed: {
-    hebergements () {
-      // je veux garder que les éléments pas en trending
-      // et qui correspondent au filtre sélectionné dans item.tags
-
-      return this.accommodations
+    //retourne les éléments en tendance
+    trending () {
+      return this.accommodations.filter(accomodation => accomodation.trending === true)
     },
-    populaires () {
-      // je veux garder que les éléments en trending
-      // et qui correspondent au filtre sélectionné dans item.tags
 
-      return this.accommodations
+    notTrending () {
+      //retourne les éléments pas en tendance
+      return this.accommodations.filter(accomodation => accomodation.trending === false)
+    },
+
+    hebergements () {
+      // retourne les éléments pas en tendance et qui correspondent au filtre sélectionné dans item.tags
+       //si pas de filtres slectionnés renvoie liste par défault
+      if (!this.selectedFilter) return this.notTrending
+      return this.notTrending.filter(accomodation => accomodation.tags.includes(this.selectedFilter));
+    },
+
+    populaires () {
+      // retourne les éléments en tendance et qui correspondent au filtre sélectionné dans item.tags
+      //si pas de filtres slectionnés renvoie liste par défault
+      if (!this.selectedFilter) return this.trending
+      return this.trending.filter(accomodation => accomodation.tags.includes(this.selectedFilter));
     },
   },
+
   async mounted () {
     // on attend que notre page soit prête dans le DOM
     await this.$nextTick()
 
     // axios : requête vers les hébergements
     this.accommodations = await this.$axios.$get('/api/accommodations')
+    // axios : requête vers les activités
     this.activities = await this.$axios.$get('/api/activities')
-
-    // je veux stocker le résultat dans mon composant
-    // docu vue.js : component data
   },
 }
 </script>
