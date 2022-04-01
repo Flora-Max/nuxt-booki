@@ -1,6 +1,6 @@
 <template >
   <ul class="filters__list">
-    <filtres
+    <filters
       v-for="(item, i) in items"
       @change="$emit('change', $event)"
       :key="i"
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'FilterList',
+  name: 'FiltersList',
   model: {  // model appliqué ds index  // evenement= pour passer des infos aux parents; props= pour passer des infos aux enfants
     prop: 'selected',
     event: 'change'

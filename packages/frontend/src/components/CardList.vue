@@ -1,8 +1,8 @@
 <template >
   <ul class="cards-list">
     <card
-      v-for="content in items"
-      :key="content.id"
+      v-for="(content, i) in items"
+      :key="`${i}_${content.id}`"
       :variant="variant"
       :content="content"
     />

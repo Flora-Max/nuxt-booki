@@ -11,7 +11,7 @@
         <p class="mt-1">En plein centre ville ou en pleine nature</p>
 
         <!-- formulaire de recherche -->
-        <form action="index.html" method="GET" role="search">
+        <form @submit.prevent="getValue" action="index.html" method="GET" role="search">
           <div class="search-input">
             <!-- label -->
             <label for="search" class="search-input__icon">
@@ -19,7 +19,7 @@
             </label>
             <!-- zone de texte -->
             <div class="search-input__text">
-              <input type="search" id="search" name="search" placeholder="Paris, France">
+              <input v-model="valueCity" type="search" id="search" name="search" placeholder="Paris, France">
             </div>
             <!-- bouton d'envoi -->
             <button type="submit" class="search-input__button" aria-label="Rechercher">
@@ -37,7 +37,7 @@
             </header>
 
             <!-- Liste des filtres disponibles -->
-            <filtres-liste
+            <filters-list
               v-model="selectedFilter"
               :filters="[]"
             />
@@ -59,7 +59,7 @@
         <!-- Hébergements -->
         <section id="hebergements" class="cards-group__item">
           <header>
-            <h2 class="h2">Hébergements à Marseille</h2>
+            <h2 class="h2">Hébergements à {{ city }}</h2>
           </header>
 
           <!-- Résultats -->
@@ -85,7 +85,7 @@
       <!-- Activités à Marseille -->
       <section id="activites">
         <header>
-          <h2 class="h2">Activités à Marseille</h2>
+          <h2 class="h2">Activités à {{ city }}</h2>
         </header>
 
         <!-- Résultats -->
@@ -103,57 +103,62 @@
 <script>
 import Card from '../components/Card.vue'
 import CardList from '../components/CardList.vue'
+import FiltersList from '../components/FiltersList.vue'
 export default {
-  components: { Card, CardList },
+  components: { Card, CardList, FiltersList },
   name: 'IndexPage',
+
   data () {
     return {
       accommodations: [], // résultats de l'API pour les hébergements
       activities: [], // résultats de l'API pour les activités
       selectedFilter: null, // filtre sélectionné
       filters: ['economic', 'family', 'pets', 'romantic'],
+      city: 'Marseille',
+      valueCity: 'Marseille',
     }
   },
+
 
 // pas de this en () =>
 // méthode [...///] peut remplacer push
   methods: {
     //méthode appelé au click sur le bouton, retourne un complément d'affichage
     addDisplay() {
-      return this.accommodations.push(this.accommodations['1'], this.accommodations['2'])
+      this.accommodations = [].concat(this.accommodations, this.accommodations.slice(0, 6))
+    },
+   //méthode appelé au click de la searchBar, change titre ac le nom de la ville renseignée par l'utilisateur
+    getValue() {
+      this.city = this.valueCity
     }
   },
 
   computed: {
-    //retourne les éléments en tendance
-    trending () {
-      return this.accommodations.filter(accomodation => accomodation.trending === true)
-    },
-
-    notTrending () {
-      //retourne les éléments pas en tendance
-      return this.accommodations.filter(accomodation => accomodation.trending === false)
-    },
 
     hebergements () {
       // retourne les éléments pas en tendance et qui correspondent au filtre sélectionné dans item.tags
        //si pas de filtres slectionnés renvoie liste par défault
-      if (!this.selectedFilter) return this.notTrending
-      return this.notTrending.filter(accomodation => accomodation.tags.includes(this.selectedFilter));
+      return this.accommodations
+        .filter(accomodation => (
+          accomodation.trending === false && // on ne garde que ceux qui  ne sont pas en tendance
+          accomodation.location.city === this.city && // qui sont dans la ville sélectionnée par le formulaire
+          (this.selectedFilter ? accomodation.tags.includes(this.selectedFilter) : true) // et qui correspondent au filtre
+        ))
     },
 
     populaires () {
       // retourne les éléments en tendance et qui correspondent au filtre sélectionné dans item.tags
       //si pas de filtres slectionnés renvoie liste par défault
-      if (!this.selectedFilter) return this.trending
-      return this.trending.filter(accomodation => accomodation.tags.includes(this.selectedFilter));
+      return this.accommodations
+        .filter(accomodation => (
+          accomodation.trending === true &&
+          accomodation.location.city === this.city &&
+          (this.selectedFilter ? accomodation.tags.includes(this.selectedFilter) : true)
+        ));
     },
   },
 
   async mounted () {
-    // on attend que notre page soit prête dans le DOM
-    await this.$nextTick()
-
     // axios : requête vers les hébergements
     this.accommodations = await this.$axios.$get('/api/accommodations')
     // axios : requête vers les activités
