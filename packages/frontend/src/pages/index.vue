@@ -116,6 +116,7 @@ export default {
       filters: ['economic', 'family', 'pets', 'romantic'],
       city: 'Marseille',
       valueCity: 'Marseille',
+      valueNumber: '500'
     }
   },
 
@@ -130,6 +131,10 @@ export default {
    //méthode appelé au click de la searchBar, change titre ac le nom de la ville renseignée par l'utilisateur
     getValue() {
       this.city = this.valueCity
+      //return city.charAt(0).toUppercase() + city.slice(1)
+      const str1 = this.city;
+      const str2 = str1.charAt(0).toUpperCase() + str1.slice(1)
+      this.city = str2;
     }
   },
 
