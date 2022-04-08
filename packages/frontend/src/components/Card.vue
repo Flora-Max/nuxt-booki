@@ -9,10 +9,10 @@
     <a href="#" :title="content.name"  class="cards-list__item__wrapper">
       <article class="cards-list__item__container">
         <div class="cards-list__item__cover-wrapper">
-          <picture class="cards-list__item__cover" v-if="content.images">
-            <source media="(min-width: 992px)" :srcset="content.images.large">
-            <source media="(min-width: 768px)" :srcset="content.images.medium">
-            <img :src="content.images.small" alt="Aperçu de l'élément" width="250">
+          <picture class="cards-list__item__cover">
+            <source media="(min-width: 992px)" :srcset="content.imageLarge">
+            <source media="(min-width: 768px)" :srcset="content.imageMedium">
+            <img :src="content.imageSmall" alt="Aperçu de l'élément" width="250">
           </picture>
         </div>
 

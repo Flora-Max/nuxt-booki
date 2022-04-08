@@ -156,10 +156,10 @@ export default {
       // retourne les éléments en tendance et qui correspondent au filtre sélectionné dans item.tags
       //si pas de filtres slectionnés renvoie liste par défault
       return this.accommodations
-        .filter(accomodation => (
-          accomodation.trend === true &&
-          accomodation.city === this.city &&
-          (this.selectedFilter ? accomodation.category.includes(this.selectedFilter) : true)
+        .filter(hebergement => (
+          hebergement.trend === true &&
+          hebergement.city === this.city &&
+          (this.selectedFilter ? hebergement.category.includes(this.selectedFilter) : true)
         ));
     },
 

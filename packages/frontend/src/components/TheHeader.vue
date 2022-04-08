@@ -17,6 +17,10 @@
         <li class="header__nav__list-item">
           <a href="#activites">Activités</a>
         </li>
+
+        <li class="header__nav__list-item">
+          <nuxt-link :to="{ name: 'inscription' }">Inscription</nuxt-link>
+        </li>
       </ul>
     </nav>
   </header>
