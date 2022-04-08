@@ -90,7 +90,7 @@
 
         <!-- Résultats -->
         <CardList
-          :items="activities"
+          :items="activitiesCity"
           id="grid-activities"
           class="grid-activities"
           variant="jumbo"
@@ -113,10 +113,10 @@ export default {
       accommodations: [], // résultats de l'API pour les hébergements
       activities: [], // résultats de l'API pour les activités
       selectedFilter: null, // filtre sélectionné
-      filters: ['economic', 'family', 'pets', 'romantic'],
+      //filters: ['economic', 'family', 'pets', 'romantic'],
       city: 'Marseille',
       valueCity: 'Marseille',
-      valueNumber: '500'
+
     }
   },
 
@@ -143,12 +143,13 @@ export default {
     hebergements () {
       // retourne les éléments pas en tendance et qui correspondent au filtre sélectionné dans item.tags
        //si pas de filtres slectionnés renvoie liste par défault
-      return this.accommodations
-        .filter(accomodation => (
-          accomodation.trending === false && // on ne garde que ceux qui  ne sont pas en tendance
-          accomodation.location.city === this.city && // qui sont dans la ville sélectionnée par le formulaire
-          (this.selectedFilter ? accomodation.tags.includes(this.selectedFilter) : true) // et qui correspondent au filtre
-        ))
+        return this.accommodations
+        .filter((hebergement) => (
+          hebergement.trend === false && // on ne garde que ceux qui  ne sont pas en tendance
+          hebergement.city === this.city && // qui sont dans la ville sélectionnée par le formulaire
+          (this.selectedFilter ? hebergement.category.includes(this.selectedFilter) : true) // et qui correspondent au filtre
+        )
+      )
     },
 
     populaires () {
@@ -156,18 +157,25 @@ export default {
       //si pas de filtres slectionnés renvoie liste par défault
       return this.accommodations
         .filter(accomodation => (
-          accomodation.trending === true &&
-          accomodation.location.city === this.city &&
-          (this.selectedFilter ? accomodation.tags.includes(this.selectedFilter) : true)
+          accomodation.trend === true &&
+          accomodation.city === this.city &&
+          (this.selectedFilter ? accomodation.category.includes(this.selectedFilter) : true)
         ));
     },
+
+    activitiesCity() {
+      //retourne les éléments activités en fonction de la ville sélectionnée
+      return this.activities.filter((activity) => activity.city == this.city);
+    }
   },
 
   async mounted () {
     // axios : requête vers les hébergements
-    this.accommodations = await this.$axios.$get('/api/accommodations')
+    //this.accommodations = await this.$axios.$get('/api/accommodations')
+    this.accommodations = await this.$axios.$get('http://localhost:8000/')
+    
     // axios : requête vers les activités
-    this.activities = await this.$axios.$get('/api/activities')
+    this.activities = await this.$axios.$get('http://localhost:8000/activity')
   },
 }
 </script>

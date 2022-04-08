@@ -5,10 +5,11 @@
       variant && `cards-list__item--${variant}`
     ]"
   >
+    <!--<pre>{{JSON.stringify(content, null,  2)}}</pre>-->
     <a href="#" :title="content.name"  class="cards-list__item__wrapper">
       <article class="cards-list__item__container">
         <div class="cards-list__item__cover-wrapper">
-          <picture class="cards-list__item__cover">
+          <picture class="cards-list__item__cover" v-if="content.images">
             <source media="(min-width: 992px)" :srcset="content.images.large">
             <source media="(min-width: 768px)" :srcset="content.images.medium">
             <img :src="content.images.small" alt="Aperçu de l'élément" width="250">
