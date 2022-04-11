@@ -9,10 +9,14 @@
       </section>
 
       <section>
-          <form>
+          <form @submit.prevent="handleSubmit">
               <div>
                   <label for="email">E-mail</label>
                   <input type="text" id="email" v-model="email">
+              </div>
+              <div>
+                <label for="email">Username</label>
+                <input type="text" id="username" v-model="username">
               </div>
               <div>
                   <label for="password">Mot de passe</label>
@@ -33,8 +37,24 @@ export default {
     data () {
         return {
             email: null,
+            username: null,
             password: null,
+            
         }
+    },
+
+    router: {
+      prefetchLinks: false
+  },
+
+    methods: {
+      handleSubmit (event) {
+        return this.$axios.$post('http://localhost:8000/login', { email, username, password })
+          .then((res) => {
+            console.log(res) 
+            return this.$router.redirect({ name: 'index' })
+          })
+      }
     }
 }
 </script>
