@@ -6,7 +6,8 @@
     ]"
   >
     <!--<pre>{{JSON.stringify(content, null,  2)}}</pre>-->
-    <a href="#" :title="content.name"  class="cards-list__item__wrapper">
+     <nuxt-link :to="{ name: 'accommodations-id', params: {id: content.id} }" 
+     :title="content.name"  class="cards-list__item__wrapper">
       <article class="cards-list__item__container">
         <div class="cards-list__item__cover-wrapper">
           <picture class="cards-list__item__cover">
@@ -22,13 +23,13 @@
           </header>
 
           <p v-if="content.price" class="cards-list__item__description">
-            <strong>Nuit à partir de <span>{{ content.price }}</span></strong>
+            <strong>Nuit à partir de <span>{{ content.price }}€</span></strong>
           </p>
 
           <aside v-if="content.note !== undefined" class="cards-list__item__stars" :data-stars="content.note">Note de {{ content.note }} sur 5</aside>
         </div>
       </article>
-    </a>
+    </nuxt-link>
   </li>
 </template>
 
@@ -41,10 +42,11 @@ export default {
       default: '',
       validator: value => !value ? true : [ 'paysage', 'jumbo' ].includes(value)
     },
+
     content: {
       type: Object,
       default: () => ({})
     },
-  },
+  }
 }
 </script>

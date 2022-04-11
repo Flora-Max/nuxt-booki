@@ -172,10 +172,10 @@ export default {
   async mounted () {
     // axios : requête vers les hébergements
     //this.accommodations = await this.$axios.$get('/api/accommodations')
-    this.accommodations = await this.$axios.$get('http://localhost:8000/')
+    this.accommodations = await this.$axios.$get('/')
     
     // axios : requête vers les activités
-    this.activities = await this.$axios.$get('http://localhost:8000/activity')
+    this.activities = await this.$axios.$get('/activity')
   },
 }
 </script>
