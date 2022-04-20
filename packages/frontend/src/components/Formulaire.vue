@@ -1,143 +1,167 @@
 <template>
-  <div class="formulaire">
-    <b-form @submit.prevent="onSubmit" @reset="onReset" v-if="show" class="form">
-      <b-form-group
-        id="input-group-1"
-        label="Nom de l'établissement:"
-        label-for="input-1"
-        description="Nom de l'établissement."
-        required>
-        <b-form-input
-          id="input-1"
-          v-model="content.name"
-          type="text"
-          placeholder="Nom de l'établissement"
-          required
-        ></b-form-input>
-      </b-form-group>
+  <b-form @submit.prevent="onSubmit" class="form">
+    <!-- Nom -->
+    <b-form-group
+      id="input-group-1"
+      label="Nom de l'établissement:"
+      label-for="input-1"
+      required
+    >
+      <b-form-input
+        id="input-1"
+        @input="setForm('name', $event)"
+        :value="form.name"
+        type="text"
+        placeholder="Nom de l'établissement"
+        required
+      ></b-form-input>
+    </b-form-group>
 
-      <b-form-group id="input-group-2" label="Ville:" label-for="input-2">
-        <b-form-input
-          id="input-2"
-          v-model="content.city"
-          placeholder="Ville:"
-          required
-        ></b-form-input>
-      </b-form-group>
+    <!-- Description -->
+    <b-form-group id="input-group-3" label="Description:" label-for="input-3">
+      <b-form-textarea
+        id="input-3"
+        @input="setForm('description', $event)"
+        :value="form.description"
+        placeholder="Description de l'établissement"
+        rows="5"
+      ></b-form-textarea>
+    </b-form-group>
 
-      <b-form-group id="input-group-3" label="Code postal:" label-for="input-3">
-        <b-form-input
-          id="input-3"
-          v-model.number="content.postcode"
-          placeholder="Code postal"
-          required
-          type="number"
-        ></b-form-input>
-      </b-form-group>
+    <!-- Prix -->
+    <b-form-group
+      id="input-group-3"
+      label="Prix de la nuit:"
+      label-for="input-3"
+    >
+      <b-form-input
+        id="input-3"
+        @input="setForm('price', parseInt($event, 10))"
+        :value="form.price"
+        placeholder="Prix de la nuit"
+        required
+        type="number"
+      ></b-form-input>
+    </b-form-group>
 
-      <b-form-group id="input-group-3" label="Prix de la nuit:" label-for="input-3">
-        <b-form-input
-          id="input-3"
-          v-model.number="content.price"
-          placeholder="Prix de la nuit"
-          required
-          type="number"
-        ></b-form-input>
-      </b-form-group>
+    <!-- Ville -->
+    <b-form-group id="input-group-2" label="Ville:" label-for="input-2">
+      <b-form-input
+        id="input-2"
+        @input="setForm('city', $event)"
+        :value="form.city"
+        placeholder="Ville:"
+        required
+      ></b-form-input>
+    </b-form-group>
 
-      <b-form-group id="input-group-3" label="Description:" label-for="input-3">
-        <b-form-input
-          id="input-3"
-          v-model="content.description"
-          placeholder="Description de l'établissement"
-        ></b-form-input>
-      </b-form-group>
+    <!-- Code postal -->
+    <b-form-group id="input-group-3" label="Code postal:" label-for="input-3">
+      <b-form-input
+        id="input-3"
+        @input="setForm('postcode', parseInt($event, 10))"
+        :value="form.postcode"
+        placeholder="Code postal"
+        required
+        type="number"
+      ></b-form-input>
+    </b-form-group>
 
-      <b-form-group id="input-group-3" label="Categorie:" label-for="input-3">
-        <b-form-select
-          id="input-3"
-          v-model="content.category"
-          :options="category"
-          required
-        ></b-form-select>
-      </b-form-group>
-        <div class="buttonForm">
-      </div>
-    </b-form>
-  </div>
+    <!-- Catégorie -->
+    <b-form-group id="input-group-3" label="Categorie:" label-for="input-3">
+      <b-form-select
+        id="input-3"
+        @input="setForm('category', $event)"
+        :value="form.category"
+        :options="categories"
+        required
+      ></b-form-select>
+    </b-form-group>
+
+    <b-form-group id="input-group-3" label="Categorie:" label-for="input-3">
+      <b-form-checkbox
+        @input="setForm('trend', $event)"
+        :checked="form.trend"
+        name="check-button"
+        switch
+      >
+        Afficher en tendance
+      </b-form-checkbox>
+    </b-form-group>
+
+    <br>
+
+    <b-button-group v-if="!noActions">
+      <b-button type="reset">Effacer</b-button>
+      <b-button variant="primary" type="submit">Envoyer</b-button>
+    </b-button-group>
+  </b-form>
 </template>
 
 
 <script>
-import Modale from '../components/Modale.vue';
 export default {
-    name: 'Formulaire',
-    components: { Modale },
-    data() {
-      return {
-        form: {
-          name: '',
-          city: '',
-          description:'',
-          category: null,
-          checked: []
-        },
-        category: [{ text: 'Select One', value: null }, 'Romantique', 'Animaux autorisés', 'Economique', 'Familial'],
-        content: {},
-       
-        show: true
-      }
+  name: "Formulaire",
+
+  model: {
+    prop: "value",
+    event: "change",
+  },
+
+  props: {
+    noActions: { type: Boolean, default: false },
+    value: { type: Object, default: () => ({}) },
+  },
+
+  watch: {
+    value(value) {
+      this.form = value;
     },
+  },
 
-   /* async mounted(){
-        //requete vers l'affichage d'un élément hébergement de notre bdd
-        this.content = await this.$axios.$get(`/display/${this.$route.params.id}`);
-        this.form.hebergementId = this.content.id
-    },*/
+  data() {
+    return {
+      form: this.value,
+      categories: [
+        { text: "Select One", value: null },
+        { text: "Romantique", value: 'romantic' },
+        { text: "Familial", value: 'family' },
+        { text: "Économique", value: 'economic' },
+        { text: "Animaux autorisés", value: 'pets' },
+      ],
+    };
+  },
 
-    methods: {
-        /*onSubmit(){
-            console.log(this.form);
-            this.$axios.$put('admin/create/hebergement', this.form)
-            .then((response) => {
-            console.log(response);
-            })
-            .catch((error) => {
-            console.log("error", error);
-            })
-            this.$router.push({ name: 'adminDisplay'})
-        },*/
-        onReset(event) {
-            event.preventDefault()
-            // Reset our form values
-            this.form.name = ''
-            this.form.city = ''
-            this.form.description = ''
-            this.form.checked = []
-            // Trick to reset/clear native browser form validation state
-            this.show = false
-            this.$nextTick(() => {
-            this.show = true
-        })
+  methods: {
+    setForm(key, value) {
+      const form = Object.assign({}, this.form);
+
+      if (form[key] !== undefined) {
+        form[key] = value;
       }
-    }
-  }
+
+      this.$emit("change", form);
+    },
+    onSubmit () {
+      this.$emit('submit', this.form)
+    },
+  },
+};
 </script>
 
 <style lang="scss">
 .formulaire {
-  .h1{
+  .h1 {
     margin-top: 50px;
     padding: 50px;
   }
-  .form{
+  .form {
     padding: 50px;
     padding-top: 10px;
     margin-right: 280px;
   }
-  .buttonForm{
+  .buttonForm {
     margin-top: 20px;
   }
 }
-
 </style>
