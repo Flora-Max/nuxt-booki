@@ -9,19 +9,30 @@
       </section>
 
       <section>
-          <form @submit.prevent="handleSubmit">
+          <form @submit.prevent="handleSubmit" id="formInscription">
               <div>
-                  <label for="email">E-mail</label>
-                  <input type="text" id="email" v-model="email">
+                  <label for="email">E-mail:</label>
+                  <input type="email" id="email" v-model="form.email">
               </div>
               <div>
-                <label for="email">Username</label>
-                <input type="text" id="username" v-model="username">
+                <label for="username">Username:</label>
+                <input type="text" id="username" v-model="form.username">
               </div>
               <div>
-                  <label for="password">Mot de passe</label>
-                  <input type="password" id="password" v-model="password">
+                  <label for="password">Mot de passe:</label>
+                  <input type="password" id="password" v-model="form.password">
               </div>
+              <div>
+                 <label for="role">Rôle:</label>
+
+                  <input type="radio" id="client" v-model="role" value="client">
+                  <label for="client">Client</label>
+                  <div>
+                  <input type="radio" id="admin" name="admin"  v-model="role" value="admin">
+                  <label for="admin">Admin</label>
+                </div>
+              </div>
+
               <div>
                   <button type="submit">Envoyer</button>
               </div>
@@ -34,25 +45,26 @@
 <script>
 export default {
     name: 'PageInscription',
+
     data () {
         return {
-            email: null,
-            username: null,
-            password: null,
-            
+          form: {
+            username: '',
+            email: '',
+            password: '',
+            role: null
+          }
         }
     },
 
-    router: {
-      prefetchLinks: false
-  },
 
     methods: {
       handleSubmit (event) {
-        return this.$axios.$post('http://localhost:8000/login', { email, username, password })
+        console.log(this.form);
+        return this.$axios.$post('/register', this.form)
           .then((res) => {
             console.log(res) 
-            return this.$router.redirect({ name: 'index' })
+            //return this.$router.redirect({ name: 'index' })
           })
       }
     }

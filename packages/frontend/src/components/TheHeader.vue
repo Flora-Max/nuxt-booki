@@ -14,22 +14,29 @@
     <nav class="header__nav">
       <ul class="header__nav__list">
         <li class="header__nav__list-item">
-          <a href="#hebergements">Hébergements</a>
+          <nuxt-link :to="{ name: 'index', hash: '#hebergements' }">Hébergements</nuxt-link>
         </li>
 
         <li class="header__nav__list-item">
-          <a href="#activites">Activités</a>
+          <nuxt-link :to="{ name: 'index', hash: '#activites' }">Activités</nuxt-link>
         </li>
 
         <li class="header__nav__list-item">
           <nuxt-link :to="{ name: 'inscription' }">Inscription</nuxt-link>
         </li>
-          <li class="header__nav__list-item">
-          <nuxt-link :to="{ name: 'connexion' }">Connexion</nuxt-link>
+        <li class="header__nav__list-item">
+          <nuxt-link :to="{ name: 'adminDisplay' }">Admin</nuxt-link>
         </li>
-          <li class="header__nav__list-item">
-          <nuxt-link :to="{ name: 'deconnexion' }">Deconnexion</nuxt-link>
+        <li class="header__nav__list-item">
+          <nuxt-link :to="{ name: 'connexion' }">
+            <i class="fas fa-sign-in-alt"></i>
+          </nuxt-link>
         </li>
+        <!-- <li class="header__nav__list-item">
+          <nuxt-link :to="{ name: 'deconnexion' }">
+            <i class="fas fa-sign-out-alt"></i>
+          </nuxt-link>
+        </li> -->
       </ul>
     </nav>
   </header>

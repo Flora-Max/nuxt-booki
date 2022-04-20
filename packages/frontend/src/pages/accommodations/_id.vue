@@ -22,12 +22,10 @@
         <span><strong>Nuit à partir de: </strong>{{ content.price }}€</span>
       </p>
 
-      <!--
-          <aside v-if="content.note !== undefined" class="cards-list__item__stars" :data-stars="accommodations.note">Note de {{ content.note }} sur 5</aside> -->
+          <aside v-if="content.note !== undefined" class="cards-list__item__stars" :data-stars="accommodations.note">Note de {{ content.note }} sur 5</aside> 
 
       <nuxt-link :to="{ name: 'reservations-id', params: { id: content.id } }"
-        >Reserver</nuxt-link
-      >
+        >Reserver</nuxt-link>
     </div>
   </article>
 </template>
@@ -48,3 +46,7 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+ 
+</style>

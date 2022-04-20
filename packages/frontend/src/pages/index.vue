@@ -38,14 +38,9 @@
 
             <!-- Liste des filtres disponibles -->
             <filters-list
-              v-model="selectedFilter"
-              :filters="[]"
+              @change="onFilterChange"
+              :value="selectedFilter"
             />
-            <!-- <filtres-liste
-              @change="selectedFilter = $event"       //idem que le model
-              :filters="[]"
-              :selected="selectedFilter"
-            /> -->
           </div>
 
           <div class="hint">
@@ -135,6 +130,13 @@ export default {
       const str1 = this.city;
       const str2 = str1.charAt(0).toUpperCase() + str1.slice(1)
       this.city = str2;
+    },
+    onFilterChange (value) {
+      if (value === this.selectedFilter) {
+        this.selectedFilter = null
+      } else {
+        this.selectedFilter = value
+      }
     }
   },
 
@@ -147,7 +149,7 @@ export default {
         .filter((hebergement) => (
           hebergement.trend === false && // on ne garde que ceux qui  ne sont pas en tendance
           hebergement.city === this.city && // qui sont dans la ville sélectionnée par le formulaire
-          (this.selectedFilter ? hebergement.category.includes(this.selectedFilter) : true) // et qui correspondent au filtre
+          (this.selectedFilter ? hebergement.category === this.selectedFilter : true) // et qui correspondent au filtre
         )
       )
     },
@@ -159,7 +161,7 @@ export default {
         .filter(hebergement => (
           hebergement.trend === true &&
           hebergement.city === this.city &&
-          (this.selectedFilter ? hebergement.category.includes(this.selectedFilter) : true)
+          (this.selectedFilter ? hebergement.category === this.selectedFilter : true)
         ));
     },
 

@@ -1,11 +1,11 @@
 <template >
   <ul class="filters__list">
-    <filters
+    <filters-list-item
       v-for="(item, i) in items"
       @change="$emit('change', $event)"
       :key="i"
       :filtre="item"
-      :selected="selected === item.value"
+      :selected="value === item.value"
     /> <!-- On rajoute un index dans le item au cas ou 2 noms pareils-->
   </ul>
 
@@ -15,11 +15,11 @@
 export default {
   name: 'FiltersList',
   model: {  // model appliqué ds index  // evenement= pour passer des infos aux parents; props= pour passer des infos aux enfants
-    prop: 'selected',
+    prop: 'value',
     event: 'change'
   },
   props: {
-    selected: {
+    value: {
       type: [ String, null ],
       default: null
     }

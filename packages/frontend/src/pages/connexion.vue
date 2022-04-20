@@ -32,17 +32,17 @@ export default {
     name: 'PageConnexion',
     data() {
         return{
-            username: null,
+            username: '',
             password: null,
         }
     },
 
     methods: {
         handleSubmit (event) {
-        return this.$axios.$post('http://localhost:8000/login', { email, username, password })
+        return this.$axios.$post('/login', { username, password })
           .then((res) => {
             console.log(res)
-            return this.$router.redirect({ name: 'index' })
+            //return this.$router.redirect({ name: 'index' })
           })
         }  
     }

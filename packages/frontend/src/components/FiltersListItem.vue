@@ -5,7 +5,7 @@
         href="#"
         :class="[
           'filters__list__item',
-          { 'filters__list__item--selected': selected }
+          selected && 'filters__list__item--selected',
         ]"
         title="Economique"
       >
@@ -16,12 +16,11 @@
         <span class="filters__list__item__text">{{ filtre.name }}</span>
       </a>
     </li>
-
 </template>
 
 <script>
 export default {
-  name: 'Filtres',
+  name: 'FiltersListItem',
   props: {
     filtre: {
       type: Object,

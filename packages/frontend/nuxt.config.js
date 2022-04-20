@@ -27,7 +27,7 @@ export default {
       { rel: 'preconnect', crossorigin: true, href: 'https://fonts.gstatic.com' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preload', as: 'style', href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap' }
     ],
     title: 'Booki - Trouvez votre hébergement pour des vacances de rêve',
   },
@@ -41,6 +41,8 @@ export default {
   modules: [
     '~/modules/api/', // our API
     '@nuxtjs/axios', // library for HTTP requests
+    'bootstrap-vue/nuxt', 
+
   ],
 
   build: {

@@ -1,6 +1,7 @@
 import path from 'path'
 import api from '@gtnsimon/nuxt-booki-backend/app.js'
 
+
 export default function (moduleOptions = {}) {
   // register api middleware under /api/ only for dev
   // change env BOOKI_API_URL for production

@@ -5,7 +5,6 @@
       variant && `cards-list__item--${variant}`
     ]"
   >
-    <!--<pre>{{JSON.stringify(content, null,  2)}}</pre>-->
      <nuxt-link :to="{ name: 'accommodations-id', params: {id: content.id} }" 
      :title="content.name"  class="cards-list__item__wrapper">
       <article class="cards-list__item__container">
@@ -27,6 +26,9 @@
           </p>
 
           <aside v-if="content.note !== undefined" class="cards-list__item__stars" :data-stars="content.note">Note de {{ content.note }} sur 5</aside>
+
+          <br>
+          <nuxt-link :to="{ name: 'reservations-id', params: { id: content.id } }">Réserver</nuxt-link>
         </div>
       </article>
     </nuxt-link>
