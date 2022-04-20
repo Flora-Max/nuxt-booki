@@ -25,7 +25,7 @@
           <nuxt-link :to="{ name: 'inscription' }">Inscription</nuxt-link>
         </li>
         <li class="header__nav__list-item">
-          <nuxt-link :to="{ name: 'adminDisplay' }">Admin</nuxt-link>
+          <nuxt-link :to="{ name: 'admin-dashboard' }">Admin</nuxt-link>
         </li>
         <li class="header__nav__list-item">
           <nuxt-link :to="{ name: 'connexion' }">

@@ -114,7 +114,7 @@ export default {
         .catch((error) => {
           console.log("error", error);
         })
-        this.$router.push({ name: 'adminDisplay'})
+        this.$router.push({ name: 'admin-dashboard'})
     },
   }
 }
