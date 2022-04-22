@@ -2,6 +2,7 @@
   <div class="content container">
     <h1 class="h1">Espace d'administration</h1>
 
+    <!--Hebergement-->
     <section class="mt-5">
       <div class="d-flex align-items-center">
         <h2 class="h5 flex-grow-1">Liste des hébergements</h2>
@@ -44,6 +45,51 @@
       :title="`Modifier l'hébergement ”${draft.name}”`"
       ok-title="Modifier"
     />
+
+  <!--Acitivités-->
+    <section class="mt-5">
+      <div class="d-flex align-items-center">
+        <h2 class="h5 flex-grow-1">Liste des activitées</h2>
+
+        <b-button
+          :to="{ name: 'admin-activities-new' }"
+          variant="outline-success"
+          >Importer une nouvelle activitée</b-button
+        >
+      </div>
+
+      <b-table
+        class="mt-1"
+        :fields="['id', 'name','city', 'postcode' , 'actions']"
+        :items="activities"
+        hover
+      >
+        <template #cell(actions)="{ item: activity }">
+          <b-button
+            variant="outline-primary"
+            @click="handleEditActivity(activity)"
+            :title="activity.name"
+          >Modifier</b-button>
+
+          <b-button
+            @click="onDeleteActivity(activity)"
+            type="button"
+            variant="outline-danger"
+            >Supprimer</b-button
+          >
+        </template>
+      </b-table>
+    </section>
+
+    <activity-modal
+      v-if="draft !== null"
+      @ok="fetchData"
+      @close="draft = null"
+      :content="draft"
+      :title="`Modifier l'activité ”${draft.name}”`"
+      ok-title="Modifier"
+    />
+
   </div>
 </template>
 
@@ -54,21 +100,25 @@ export default {
   data() {
     return {
       accommodations: [],
+      activities: [],
       content: {},
       draft: null,
     };
   },
 
   async mounted() {
-    // requête GET pour récupérer les hébergements de notre bdd
     await this.$nextTick();
     await this.fetchData();
   },
 
   methods: {
     async fetchData() {
+      // requête GET pour récupérer les hébergements et les activitées de notre bdd
       this.accommodations = await this.$axios.$get("/");
+      this.activities = await this.$axios.$get("/activity");
     },
+
+    //méthode pour supprimer un hébergement
     async onDelete(accommodation) {
       const consent = await this.$bvModal.msgBoxConfirm(
         "Supprimer cet hébergement"
@@ -82,9 +132,29 @@ export default {
         return this.fetchData();
       }
     },
-    handleEdit (accommodation) {
+    handleEdit(accommodation) {
       this.draft = accommodation
     },
+
+    //activity
+    async onDeleteActivity(activity) {
+      const consent = await this.$bvModal.msgBoxConfirm(
+        "Supprimer cette activité"
+      );
+
+      if (consent) {
+        await this.$axios.$delete(
+          `/admin/activity/delete/${activity.id}`
+        );
+
+        return this.fetchData();
+      }
+    },
+
+    handleEditActivity(activity) {
+      this.draft = activity
+    },
+
   },
 };
 </script>
