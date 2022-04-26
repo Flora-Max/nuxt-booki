@@ -38,11 +38,11 @@
     </section>
 
     <accommodation-modal
-      v-if="draft !== null"
+      v-if="draftAccommodation !== null"
       @ok="fetchData"
-      @close="draft = null"
-      :content="draft"
-      :title="`Modifier l'hébergement ”${draft.name}”`"
+      @close="draftAccommodation = null"
+      :content="draftAccommodation"
+      :title="`Modifier l'hébergement ”${draftAccommodation.name}”`"
       ok-title="Modifier"
     />
 
@@ -82,11 +82,11 @@
     </section>
 
     <activity-modal
-      v-if="draft !== null"
+      v-if="draftActivity !== null"
       @ok="fetchData"
-      @close="draft = null"
-      :content="draft"
-      :title="`Modifier l'activité ”${draft.name}”`"
+      @close="draftActivity = null"
+      :content="draftActivity"
+      :title="`Modifier l'activité ”${draftActivity.name}”`"
       ok-title="Modifier"
     />
 
@@ -102,7 +102,8 @@ export default {
       accommodations: [],
       activities: [],
       content: {},
-      draft: null,
+      draftAccommodation: null,
+      draftActivity: null,
     };
   },
 
@@ -133,7 +134,7 @@ export default {
       }
     },
     handleEdit(accommodation) {
-      this.draft = accommodation
+      this.draftAccommodation = accommodation
     },
 
     //activity
@@ -152,7 +153,7 @@ export default {
     },
 
     handleEditActivity(activity) {
-      this.draft = activity
+      this.draftActivity = activity
     },
 
   },

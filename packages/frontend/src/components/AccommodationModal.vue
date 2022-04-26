@@ -45,7 +45,7 @@ export default {
     async handleSubmit(event) {
       event.preventDefault()
 
-      //requete PUT pour modifier un hebergement de notre bdd selon son id
+      //requete POST pour modifier un hebergement de notre bdd selon son id
       await this.$axios.$post(`admin/update/hebergement/${this.content.id}`, this.form)
 
       this.$emit('ok', event)

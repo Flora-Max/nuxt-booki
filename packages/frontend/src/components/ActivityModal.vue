@@ -2,7 +2,7 @@
   <b-modal
     ref="modal"
     @hidden="$emit('close')"
-    @ok="handleSubmit"
+    @ok="handleSubmitActivity"
     v-model="visible"
     :ok-title="okTitle"
     cancel-title="Fermer"
@@ -10,7 +10,7 @@
   >
 
     <div>
-    <b-form @submit="handleSubmit"
+    <b-form @submit="handleSubmitActivity"
       no-actions>
       <b-form-group
         id="input-group-1"
@@ -64,8 +64,8 @@
       >
         <b-form-input
           id="input-1"
-          v-model="form.postcode"
-          type="text"
+          v-model.number="form.postcode"
+          type="number"
           placeholder="Code postal"
           required
         ></b-form-input>
@@ -98,7 +98,7 @@ export default {
   },
 
   methods: {
-    async handleSubmit(event) {
+    async handleSubmitActivity(event) {
       event.preventDefault()
 
       //requete POST pour modifier une activitée de notre bdd selon son id
