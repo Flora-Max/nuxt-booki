@@ -65,20 +65,18 @@
           required>
         </b-form-input>
       </b-form-group>
-      <!-- <modale></modale> -->
-      <button class="btn" type="submit">Je réserve</button>
+
+      <b-button class="buttonForm" :to="{ name: 'index' }" variant="primary">Reserver</b-button>
     </b-form>
   </div>
 </template>
 
 <script>
-// import Modale from '../../components/Modale.vue';
+
 
 export default {
   name: "PageReservation",
-  // components: {
-  //   'modale': Modale
-  // },
+
   data() {
     return {
       content: {},

@@ -1,11 +1,9 @@
 <template>
   <div>
     <h1 class="h1">Ajout d'un nouvel établissement</h1>
-
     <formulaire
       v-model="form"
-      @submit="handleSubmit"
-    />
+      @submit="handleSubmit"/>
   </div>
 </template>
 
@@ -23,9 +21,11 @@ export default {
         category: null,
         trend: false,
       },
+      draft: null,
     }
   },
   methods: {
+
     async handleSubmit() {
       await this.$axios.$post("admin/create/hebergement", this.form)
       this.$router.push({ name: "admin-dashboard" });
