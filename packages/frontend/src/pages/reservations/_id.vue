@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class="h1">Réservation</h1>
-    <b-form @reset="onReset" @submit.prevent="onSubmit" id="formReservation">
+    <b-form @submit.prevent="submit" id="formReservation">
       <b-form-group
         id="input-group-1"
         label="Nom de l'établissement:"
@@ -11,7 +11,6 @@
           id="input-1"
           type="text"
           :value="content.name"
-          required
           readonly
         >
         </b-form-input>
@@ -25,6 +24,7 @@
         <b-form-input
           id="input-1"
           v-model="form.email"
+          required
           type="email"
           placeholder="Enter email">
         </b-form-input>
@@ -66,7 +66,7 @@
         </b-form-input>
       </b-form-group>
 
-      <b-button class="buttonForm" :to="{ name: 'index' }" variant="primary">Reserver</b-button>
+      <b-button type="submit" class="buttonForm" variant="primary">Reserver</b-button>
     </b-form>
   </div>
 </template>
@@ -99,20 +99,23 @@ export default {
   },
 
   methods: {
-    onReset () {
-      console.log('reset')
-    },
-    onSubmit() {
+
+    submit() {
       //requete POST pour envoyer données de formulaire de notre réservation vers la bdd
-      this.$axios
-        .$post(`/reservationForm/${this.content.id}`, this.form)
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log("error", error);
-        })
-        this.$router.push({ name: 'index'})
+      if(!(this.form.creationDate <= this.form.firstNightDate) ){
+        alert("La date de début de séjour ne peut être antérieur à la date de création")
+      }else{
+        this.$axios
+          .$post(`/reservationForm/${this.content.id}`, this.form)
+          .then((response) => {
+            console.log(response);
+          })
+          .catch((error) => {
+            console.log("error", error);
+          })
+          window.alert("Merci pour votre reservation")
+          this.$router.push({ name: 'index'})
+      }
     },
   }
 }
