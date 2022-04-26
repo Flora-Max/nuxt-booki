@@ -65,9 +65,9 @@
           required>
         </b-form-input>
       </b-form-group>
-       <!-- <modale></modale> -->
+      <!-- <modale></modale> -->
       <button class="btn" type="submit">Je réserve</button>
-    </b-form>  
+    </b-form>
   </div>
 </template>
 
@@ -114,14 +114,14 @@ export default {
         .catch((error) => {
           console.log("error", error);
         })
-        this.$router.push({ name: 'admin-dashboard'})
+        this.$router.push({ name: 'index'})
     },
   }
 }
 </script>
 
 <style scoped>
-   .h1{
+  .h1{
     margin-top: 50px;
     padding: 50px;
   }
