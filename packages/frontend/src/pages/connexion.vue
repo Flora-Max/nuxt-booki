@@ -1,50 +1,91 @@
 <template>
-    <div>
+  <div>
     <!-- Contenu principal -->
-    <main class="content container">
-        <section>
-            <header>
-                <h1 class="h1">Connectez-vous</h1>
-            </header>
-        </section>
 
-        <section>
-            <form @submit.prevent="handleSubmit">
-                <div>
-                    <label for="email">Username</label>
-                    <input type="text" id="username" v-model="username">
-                </div>
-                <div>
-                    <label for="password">Mot de passe</label>
-                    <input type="password" id="password" v-model="password">
-                </div>
-                <div>
-                    <button type="submit">Envoyer</button>
-                </div>
-            </form>
-        </section>
+    <main class="content container">
+      <section>
+        <header>
+          <h1 class="h1">Connectez-vous</h1>
+        </header>
+      </section>
+      <!--Username-->
+      <section>
+        <b-form @submit.prevent="login">
+          <b-form-group
+            id="input-group-1"
+            label="Username:"
+            label-for="input-2"
+          >
+            <b-form-input
+              id="input-1"
+              v-model="form.username"
+              placeholder="Entrer un username"
+              required
+              type="text"
+            >
+            </b-form-input>
+          </b-form-group>
+
+          <!--Mot de passe-->
+          <b-form-group
+            id="input-group-2"
+            label="Mot de passe:"
+            label-for="input-2"
+          >
+            <b-form-input
+              id="input-2"
+              v-model="form.password"
+              placeholder="Entrer un mot de passe"
+              required
+              type="password"
+            >
+            </b-form-input>
+          </b-form-group>
+
+          <b-button class="mt-3" type="submit" variant="outline-primary"
+            >Submit</b-button
+          >
+          <b-button class="mt-3" type="reset" variant="outline-danger"
+            >Reset</b-button
+          >
+        </b-form>
+      </section>
     </main>
-    </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'PageConnexion',
-    data() {
-        return{
-            username: '',
-            password: null,
-        }
-    },
+  name: "PageConnexion",
+  data() {
+    return {
+      form: {
+        username: "",
+        password: "",
+      },
+    };
+  },
 
-    methods: {
-        handleSubmit (event) {
-        return this.$axios.$post('/login', { username, password })
-          .then((res) => {
-            console.log(res)
-            //return this.$router.redirect({ name: 'index' })
-          })
-        }  
-    }
-}
+  methods: {
+    async login() {
+      try {
+        // on extrait le token de la réponse API
+        const { token } = await this.$axios.$post("/login", this.form)
+
+        // on sauvegarde le token dans le localStorage pour le récupérer
+        // lorsque l'utilisateur reviendra sur notre app (F5 ou nouvel onglet ou fermeture/ouverture du navigateur)
+        window.localStorage.setItem('token', token);
+
+        // on redirige l'utilisateur vers la page d'accueil
+        this.$router.push({ name: "index" })
+      } catch (err) {
+        this.$bvToast.toast('Identifiant ou mot de passe invalide !', {
+          title: 'Erreur de connexion',
+          autoHideDelay: 5000,
+          variant: 'danger',
+        })
+      }
+    },
+  },
+};
 </script>
