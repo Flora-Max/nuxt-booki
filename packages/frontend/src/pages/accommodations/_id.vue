@@ -82,7 +82,4 @@ export default {
     margin-top:20px
   }
 
-  .city{
-    margin-top:20px;
-  }
 </style>

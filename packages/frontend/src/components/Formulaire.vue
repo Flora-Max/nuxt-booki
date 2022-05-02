@@ -78,7 +78,7 @@
       ></b-form-select>
     </b-form-group>
 
-    <b-form-group id="input-group-3" label="Categorie:" label-for="input-3">
+    <b-form-group id="input-group-3" label-for="input-3">
       <b-form-checkbox
         @input="setForm('trend', $event)"
         :checked="form.trend"

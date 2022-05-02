@@ -39,12 +39,12 @@ export default {
 
     methods: {
         handleSubmit (event) {
-        return this.$axios.$post('http://localhost:8000/login', { email, username, password })
+        return this.$axios.$post('/logout', { email, username, password })
           .then((res) => {
             console.log(res)
             return this.$router.redirect({ name: 'index' })
           })
-        }  
+        }
     }
 }
 </script>

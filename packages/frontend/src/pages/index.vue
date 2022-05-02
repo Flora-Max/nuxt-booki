@@ -77,7 +77,7 @@
         </section>
       </div>
 
-      <!-- Activités à Marseille -->
+      <!-- Activités à .. -->
       <section id="activites">
         <header>
           <h2 class="h2">Activités à {{ city }}</h2>
@@ -108,16 +108,11 @@ export default {
       accommodations: [], // résultats de l'API pour les hébergements
       activities: [], // résultats de l'API pour les activités
       selectedFilter: null, // filtre sélectionné
-      //filters: ['economic', 'family', 'pets', 'romantic'],
       city: 'Marseille',
       valueCity: 'Marseille',
-
     }
   },
 
-
-// pas de this en () =>
-// méthode [...///] peut remplacer push
   methods: {
     //méthode appelé au click sur le bouton, retourne un complément d'affichage
     addDisplay() {
@@ -126,7 +121,6 @@ export default {
    //méthode appelé au click de la searchBar, change titre ac le nom de la ville renseignée par l'utilisateur
     getValue() {
       this.city = this.valueCity
-      //return city.charAt(0).toUppercase() + city.slice(1)
       const str1 = this.city;
       const str2 = str1.charAt(0).toUpperCase() + str1.slice(1)
       this.city = str2;
@@ -141,7 +135,6 @@ export default {
   },
 
   computed: {
-
     hebergements () {
       // retourne les éléments pas en tendance et qui correspondent au filtre sélectionné dans item.tags
        //si pas de filtres slectionnés renvoie liste par défault
@@ -171,13 +164,12 @@ export default {
     }
   },
 
-  async mounted () {
+  async mounted(){
     // axios : requête vers les hébergements
-    //this.accommodations = await this.$axios.$get('/api/accommodations')
     this.accommodations = await this.$axios.$get('/')
-    
+
     // axios : requête vers les activités
     this.activities = await this.$axios.$get('/activity')
-  },
+  }
 }
 </script>

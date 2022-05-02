@@ -2,11 +2,11 @@
   <!-- En-tête -->
   <header class="header container">
     <!-- Logo de Booki -->
-    <nuxt-link :to="{ name: 'index' }">
-    <picture class="header__logo">
-      <source media="(min-width: 768px)" srcset="/logos/booki/desktop.png">
-      <img src="/logos/booki/mobile.png" alt="Booki">
-    </picture>
+    <nuxt-link :to="{ name: 'index' }" class="header__logo">
+      <picture>
+        <source media="(min-width: 768px)" srcset="/logos/booki/desktop.png">
+        <img src="/logos/booki/mobile.png" alt="Booki">
+      </picture>
     </nuxt-link>
 
 

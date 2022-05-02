@@ -4,11 +4,11 @@
 
   &__logo {
     display: block;
-    flex: 1 0 auto;
+    flex: 0 0 auto;
     height: 45px;
     margin-left: 40px;
 
-    > img {
+    img {
       display: inline-block;
       height: 100%;
     }

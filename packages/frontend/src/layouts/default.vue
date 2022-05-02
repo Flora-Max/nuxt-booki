@@ -5,6 +5,7 @@
 
     <nuxt />
 
+    <!-- Footer -->
     <the-footer/>
   </div>
 </template>

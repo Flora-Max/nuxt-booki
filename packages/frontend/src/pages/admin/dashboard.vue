@@ -133,11 +133,12 @@ export default {
         return this.fetchData();
       }
     },
+    //méthode pour éditer l'hebergement
     handleEdit(accommodation) {
       this.draftAccommodation = accommodation
     },
 
-    //activity
+    //méthode pour supprimer l'activity
     async onDeleteActivity(activity) {
       const consent = await this.$bvModal.msgBoxConfirm(
         "Supprimer cette activité"
@@ -149,9 +150,10 @@ export default {
         );
 
         return this.fetchData();
+
       }
     },
-
+  //méthode pour éditer l'activité
     handleEditActivity(activity) {
       this.draftActivity = activity
     },
