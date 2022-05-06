@@ -5,8 +5,8 @@
       variant && `cards-list__item--${variant}`
     ]"
   >
-     <nuxt-link :to="{ name: 'accommodations-id', params: {id: content.id} }" 
-     :title="content.name"  class="cards-list__item__wrapper">
+    <nuxt-link :to="{ name: 'accommodations-id', params: {id: content.id} }"
+    :title="content.name"  class="cards-list__item__wrapper">
       <article class="cards-list__item__container">
         <div class="cards-list__item__cover-wrapper">
           <picture class="cards-list__item__cover">

@@ -38,6 +38,5 @@ export default {
       this.$emit('change', this.filtre.value)
     },
   }
-
 }
 </script>
