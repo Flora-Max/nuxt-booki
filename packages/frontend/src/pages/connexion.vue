@@ -75,15 +75,19 @@ export default {
         // on sauvegarde le token dans le localStorage pour le récupérer
         // lorsque l'utilisateur reviendra sur notre app (F5 ou nouvel onglet ou fermeture/ouverture du navigateur)
         window.localStorage.setItem('token', token);
+        //on envoie le token à l'API
+        const me = await this.$axios.$get("/auth/me");
 
+        await this.$store.dispatch('auth/me', me)
         // on redirige l'utilisateur vers la page d'accueil
         this.$router.push({ name: "index" })
       } catch (err) {
-        this.$bvToast.toast('Identifiant ou mot de passe invalide !', {
+        /*this._vm.$bvToast.toast('Identifiant ou mot de passe invalide !', {
           title: 'Erreur de connexion',
           autoHideDelay: 5000,
           variant: 'danger',
-        })
+        })*/
+        // alert('Identifiant ou mot de passe invalide')
       }
     },
   },
