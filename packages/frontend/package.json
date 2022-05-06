@@ -7,6 +7,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@d0whc3r/vue-auth-plugin": "^1.9.2",
     "@gtnsimon/nuxt-booki-backend": "1.0.0",
     "@nuxtjs/axios": "^5.13.6",
     "bootstrap": "^5.1.3",

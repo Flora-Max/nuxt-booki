@@ -41,8 +41,11 @@ export default {
   modules: [
     '~/modules/api/', // our API
     '@nuxtjs/axios', // library for HTTP requests
-    'bootstrap-vue/nuxt', 
+    'bootstrap-vue/nuxt',
+  ],
 
+  plugins: [
+    '~/plugins/auth.js',
   ],
 
   build: {
