@@ -25,13 +25,14 @@
           <nuxt-link :to="{ name: 'inscription' }">Inscription</nuxt-link>
         </li>
         <li class="header__nav__list-item">
-          <nuxt-link :to="{ name: 'admin-dashboard' }">Admin</nuxt-link>
-        </li>
-        <li class="header__nav__list-item">
           <nuxt-link :to="{ name: 'connexion' }">
             <i class="fas fa-sign-in-alt"></i>
           </nuxt-link>
         </li>
+        <b-dropdown variant="light" id="dropdown" class="header__nav__list-item" text="Accès">
+          <b-dropdown-item :to="{ name: 'admin-dashboard' }">Admin</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'dashboardClient' }">Mes réservations</b-dropdown-item>
+        </b-dropdown>
         <!-- <li class="header__nav__list-item">
           <nuxt-link :to="{ name: 'deconnexion' }">
             <i class="fas fa-sign-out-alt"></i>
@@ -47,3 +48,19 @@ export default {
   name: 'TheHeader',
 }
 </script>
+
+<style scoped>
+  #dropdown{
+    display: block;
+    padding: 40px 40px 10px;
+    border-top: 2px solid transparent;
+    color: #000;
+    line-height: 32px;
+  }
+
+  #dropdown:hover {
+    border-color: #0065fc;
+    color: #0065fc;
+  }
+
+</style>

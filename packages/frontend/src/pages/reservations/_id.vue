@@ -47,7 +47,9 @@
             </b-form-input>
           </b-form-group>
 
-          <b-form-group class="mt-2" label="Nombre de nuits:" label-for="input-2">
+          <b-form-group class="mt-2"
+            label="Nombre de nuits:"
+            label-for="input-2">
             <b-form-input
               id="input-2"
               type="number"
@@ -56,7 +58,9 @@
             </b-form-input>
           </b-form-group>
 
-          <b-form-group class="mt-2" label="Date de création:" label-for="input-2">
+          <b-form-group class="mt-2"
+            label="Date de création:"
+            label-for="input-2">
             <b-form-input
               id="input-2"
               type="date"
@@ -65,7 +69,9 @@
             </b-form-input>
           </b-form-group>
 
-          <b-form-group class="mt-2" label="Date de début de séjour:" label-for="input-2">
+          <b-form-group class="mt-2"
+            label="Date de début de séjour:"
+            label-for="input-2">
             <b-form-input
               id="input-2"
               type="date"

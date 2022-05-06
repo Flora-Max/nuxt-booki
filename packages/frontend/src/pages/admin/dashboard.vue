@@ -10,16 +10,15 @@
         <b-button
           :to="{ name: 'admin-accommodations-new' }"
           variant="outline-success"
-          >Importer un nouvel établissement</b-button
-        >
+          >Importer un nouvel établissement</b-button>
       </div>
 
       <b-table
         class="mt-1"
         :fields="['id', 'name', 'city', 'price', 'actions']"
         :items="accommodations"
-        hover
-      >
+        hover>
+
         <template #cell(actions)="{ item: accommodation }">
           <b-button
             variant="outline-primary"
@@ -31,8 +30,7 @@
             @click="onDelete(accommodation)"
             type="button"
             variant="outline-danger"
-            >Supprimer</b-button
-          >
+            >Supprimer</b-button>
         </template>
       </b-table>
     </section>
@@ -43,8 +41,7 @@
       @close="draftAccommodation = null"
       :content="draftAccommodation"
       :title="`Modifier l'hébergement ”${draftAccommodation.name}”`"
-      ok-title="Modifier"
-    />
+      ok-title="Modifier"/>
 
   <!--Acitivités-->
     <section class="mt-5">
@@ -54,16 +51,15 @@
         <b-button
           :to="{ name: 'admin-activities-new' }"
           variant="outline-success"
-          >Importer une nouvelle activitée</b-button
-        >
+          >Importer une nouvelle activitée</b-button>
       </div>
 
       <b-table
         class="mt-1"
         :fields="['id', 'name','city', 'postcode' , 'actions']"
         :items="activities"
-        hover
-      >
+        hover>
+
         <template #cell(actions)="{ item: activity }">
           <b-button
             variant="outline-primary"
@@ -75,8 +71,7 @@
             @click="onDeleteActivity(activity)"
             type="button"
             variant="outline-danger"
-            >Supprimer</b-button
-          >
+            >Supprimer</b-button>
         </template>
       </b-table>
     </section>
@@ -89,7 +84,6 @@
       :title="`Modifier l'activité ”${draftActivity.name}”`"
       ok-title="Modifier"
     />
-
   </div>
 </template>
 
@@ -124,15 +118,12 @@ export default {
       const consent = await this.$bvModal.msgBoxConfirm(
         "Supprimer cet hébergement"
       );
-
       if (consent) {
-        await this.$axios.$delete(
-          `/admin/hebergement/delete/${accommodation.id}`
-        );
-
+        await this.$axios.$delete(`/admin/hebergement/delete/${accommodation.id}`);
         return this.fetchData();
       }
     },
+
     //méthode pour éditer l'hebergement
     handleEdit(accommodation) {
       this.draftAccommodation = accommodation
@@ -143,21 +134,16 @@ export default {
       const consent = await this.$bvModal.msgBoxConfirm(
         "Supprimer cette activité"
       );
-
       if (consent) {
-        await this.$axios.$delete(
-          `/admin/activity/delete/${activity.id}`
-        );
-
+        await this.$axios.$delete(`/admin/activity/delete/${activity.id}`);
         return this.fetchData();
-
       }
     },
+
   //méthode pour éditer l'activité
     handleEditActivity(activity) {
       this.draftActivity = activity
     },
-
   },
 };
 </script>

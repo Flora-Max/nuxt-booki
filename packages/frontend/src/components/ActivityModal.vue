@@ -103,7 +103,6 @@ export default {
 
       //requete POST pour modifier une activitée de notre bdd selon son id
       await this.$axios.$post(`admin/update/activity/${this.content.id}`, this.form)
-
       this.$emit('ok', event)
       this.$nextTick(() => this.$refs.modal.hide())
     },

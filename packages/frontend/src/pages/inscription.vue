@@ -9,34 +9,50 @@
       </section>
 
       <section>
-          <form @submit.prevent="handleSubmit" id="formInscription">
-              <div>
-                  <label for="email">E-mail:</label>
-                  <input type="email" id="email" v-model="form.email">
-              </div>
-              <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" v-model="form.username">
-              </div>
-              <div>
-                  <label for="password">Mot de passe:</label>
-                  <input type="password" id="password" v-model="form.password">
-              </div>
-              <div>
-                 <label for="role">Rôle:</label>
+        <b-form class="mt-5" @reset="onReset" @submit.prevent="handleSubmit" id="formInscription">
+          <!--Email-->
+          <b-form-group
+          id="input-group-1"
+          label="Email:"
+          label-for="input-1"
+          >
+            <b-form-input
+              id="input-1"
+              v-model="form.email"
+              type="email"
+              placeholder="Entrer votre email"
+              required
+            >
+            </b-form-input>
+          </b-form-group>
 
-                  <input type="radio" id="client" v-model="role" value="client">
-                  <label for="client">Client</label>
-                  <div>
-                  <input type="radio" id="admin" name="admin"  v-model="role" value="admin">
-                  <label for="admin">Admin</label>
-                </div>
-              </div>
+          <!--Username-->
+          <b-form-group id="input-group-2" label="Username:" label-for="input-2">
+            <b-form-input
+            id="input-2"
+            v-model="form.username"
+            placeholder="Entrer un username"
+            required
+            type="text"
+            >
+            </b-form-input>
+          </b-form-group>
 
-              <div>
-                  <button type="submit">Envoyer</button>
-              </div>
-          </form>
+          <!--Mot de passe-->
+          <b-form-group id="input-group-3" label="Mot de passe:" label-for="input-2">
+            <b-form-input
+            id="input-2"
+            v-model="form.password"
+            placeholder="Entrer un mot de passe"
+            required
+            type="password"
+            >
+            </b-form-input>
+          </b-form-group>
+
+          <b-button class="mt-3" type="submit" variant="outline-primary">Submit</b-button>
+          <b-button class="mt-3" type="reset" variant="outline-danger">Reset</b-button>
+        </b-form>
       </section>
     </main>
   </div>
@@ -52,20 +68,28 @@ export default {
             username: '',
             email: '',
             password: '',
-            role: null
+            //isAdmin = 0
           }
         }
     },
-
-
     methods: {
-      handleSubmit (event) {
-        console.log(this.form);
-        return this.$axios.$post('/register', this.form)
-          .then((res) => {
-            console.log(res) 
-            //return this.$router.redirect({ name: 'index' })
-          })
+      async handleSubmit (event) {
+          await this.$axios.$post('/register', this.form)
+          this.$router.push({ name: "index" });
+      },
+
+
+      onReset(event) {
+        event.preventDefault()
+        // Reset our form values
+        this.form.username = ''
+        this.form.email = ''
+        this.form.password = ''
+        // Trick to reset/clear native browser form validation state
+        this.show = false
+        this.$nextTick(() => {
+          this.show = true
+        })
       }
     }
 }
